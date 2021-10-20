@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="355.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="261.0" layoutY="35.0" prefHeight="39.0" prefWidth="312.0" style="&#10;" text="Sign Up to Grocery Store" textAlignment="CENTER" textFill="#865b76" wrapText="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Accordion layoutX="185.0" layoutY="59.0" />
+      <Button layoutX="367.0" layoutY="265.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="97.0" text="Sign up" textFill="#433e39">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Button>
+      <TextField layoutX="367.0" layoutY="105.0" />
+      <TextField layoutX="367.0" layoutY="182.0" />
+      <Label layoutX="262.0" layoutY="143.0" prefHeight="25.0" prefWidth="67.0" text="E-Mail">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="261.0" layoutY="182.0" prefHeight="25.0" prefWidth="67.0" text="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ParallelCamera layoutX="226.0" layoutY="175.0" />
+      <Label layoutX="367.0" layoutY="306.0" prefHeight="25.0" prefWidth="134.0" text="Got an account already? " />
+      <Hyperlink layoutX="495.0" layoutY="307.0" prefHeight="23.0" prefWidth="45.0" text="Log in!" />
+      <ImageView fitHeight="244.0" fitWidth="247.0" layoutX="-5.0" layoutY="46.0" mouseTransparent="true">
+         <image>
+            <Image url="@grocery1.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="368.0" layoutY="143.0" />
+      <Label layoutX="262.0" layoutY="105.0" prefHeight="25.0" prefWidth="84.0" text="Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="367.0" layoutY="220.0" />
+      <Label layoutX="261.0" layoutY="220.0" prefHeight="25.0" prefWidth="84.0" text="Password">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="236.0" layoutY="75.0" orientation="VERTICAL" prefHeight="200.0" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
