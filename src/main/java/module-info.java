@@ -8,6 +8,7 @@ module com.student.grocerystore {
    // requires eu.hansolo.tilesfx;
     requires javafx.fxml;
     requires javafx.controls;
+    requires java.sql;
 
     opens com.student.grocerystore to javafx.fxml;
     exports com.student.grocerystore;

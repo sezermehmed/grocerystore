@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class Controller {
     @FXML
@@ -29,6 +30,7 @@ public class Controller {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
         System.out.println("Hello button clicked!");
+
     }
     enum LoginStatus {
         SUCCESS,
@@ -50,6 +52,8 @@ public class Controller {
             stage.close();
 
             start();
+
+
         }
         else {
             System.out.println("Login Failed");
@@ -69,5 +73,6 @@ public class Controller {
         stage.setTitle("Hello!");
         // show the stage
         stage.show();
+
     }
 }
