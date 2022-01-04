@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class Controller {
     @FXML
@@ -29,6 +30,7 @@ public class Controller {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
         System.out.println("Hello button clicked!");
+
     }
     enum LoginStatus {
         SUCCESS,
@@ -42,7 +44,9 @@ public class Controller {
         stage.show();
     }
     public void onLoginButtonClick(ActionEvent event) throws IOException {
-        if (email.getText().equals("a") && password.getText().equals("a")) {
+        Connection conn = JDBCPostgreSQLConnection.connect();
+         String[] login = Crud.read_username(conn);
+        if (email.getText().contains(login[0]) && password.getText().contains(login[2])) {
             System.out.println("Login Successful");
             LoginStatus status = LoginStatus.SUCCESS;
             // exit the fxml
@@ -50,6 +54,8 @@ public class Controller {
             stage.close();
 
             start();
+
+
         }
         else {
             System.out.println("Login Failed");
@@ -69,5 +75,6 @@ public class Controller {
         stage.setTitle("Hello!");
         // show the stage
         stage.show();
+
     }
 }
