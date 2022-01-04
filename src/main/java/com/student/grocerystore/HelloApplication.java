@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 560, 340);
         stage.setTitle("Grocery Store!");
         stage.setScene(scene);
-       // stage.show();
+        stage.show();
 
         // Connect to the database with JDBCPostgreSQLConnection
         Connection conn = JDBCPostgreSQLConnection.connect();
@@ -24,9 +24,9 @@ public class HelloApplication extends Application {
        // Crud.delete_row_by_name(conn,"Products", "Milk");
       //  Crud.read_data(conn,"Products");
       //  Crud.createTable_Sales(conn,"Sales");
-       // Crud.createTable_Users(conn,"Users");
+        Crud.createTable_Users(conn,"Users");
        // Crud.createTable_ProductDiscount(conn,"Product Discount");
-       // Crud.insertRow_users(conn,1,"admin","admin","password","admin");
+        Crud.insertRow_users(conn,2,"admin","admin","admin","admin");
        // Crud.insertRow_users(conn,2,"user","user","password","user");
        // Crud.createTable_Sales(conn,"Sales");
         //Crud.insertRow_Sales(conn,1,"77", 1,2,"card");

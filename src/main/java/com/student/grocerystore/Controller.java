@@ -44,7 +44,9 @@ public class Controller {
         stage.show();
     }
     public void onLoginButtonClick(ActionEvent event) throws IOException {
-        if (email.getText().equals("a") && password.getText().equals("a")) {
+        Connection conn = JDBCPostgreSQLConnection.connect();
+         String[] login = Crud.read_username(conn);
+        if (email.getText().contains(login[0]) && password.getText().contains(login[2])) {
             System.out.println("Login Successful");
             LoginStatus status = LoginStatus.SUCCESS;
             // exit the fxml

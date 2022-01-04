@@ -168,6 +168,32 @@ public class Crud {
         catch (Exception e){
             System.out.println(e);
         }
+
+    }public static String[] read_username(Connection conn) {
+        Statement statement;
+        ResultSet rs = null;
+
+        String Role;
+        String name;
+        String password;
+        String[] login = new String[0];
+        try {
+            String query = String.format("select * from %s", "Users");
+            statement = conn.createStatement();
+            rs = statement.executeQuery(query);
+            System.out.println(query);
+            while (rs.next()) {
+                name = rs.getString("name");
+                Role = rs.getString("role");
+                password = rs.getString("password");
+                login = new String[]{name, Role, password};
+                System.out.println(login[0] + " " + login[1] + " " + login[2]);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return login;
     }
     public void update_name(Connection conn,String table_name, String old_name,String new_name){
         Statement statement;
