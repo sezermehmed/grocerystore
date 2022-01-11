@@ -11,8 +11,8 @@ import java.sql.Connection;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 560, 340);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("StoreAdmin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1160, 640);
         stage.setTitle("Grocery Store!");
         stage.setScene(scene);
         stage.show();
@@ -24,9 +24,9 @@ public class HelloApplication extends Application {
        // Crud.delete_row_by_name(conn,"Products", "Milk");
       //  Crud.read_data(conn,"Products");
       //  Crud.createTable_Sales(conn,"Sales");
-        Crud.createTable_Users(conn,"Users");
+       // Crud.createTable_Users(conn,"Users");
        // Crud.createTable_ProductDiscount(conn,"Product Discount");
-        Crud.insertRow_users(conn,4,"admin","admin","admin","admin");
+       // Crud.insertRow_users(conn,4,"admin","admin","admin","admin");
        // Crud.insertRow_users(conn,2,"user","user","password","user");
        // Crud.createTable_Sales(conn,"Sales");
         //Crud.insertRow_Sales(conn,1,"77", 1,2,"card");

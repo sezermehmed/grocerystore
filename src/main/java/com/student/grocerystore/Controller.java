@@ -37,7 +37,7 @@ public class Controller {
         FAILURE
     }
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("store.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("StoreAdmin.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 950);
         stage.setTitle("Hello!");
         stage.setScene(scene);
