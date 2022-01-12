@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
 
         // Connect to the database with JDBCPostgreSQLConnection
         Connection conn = JDBCPostgreSQLConnection.connect();
+      //  Admin.CreateUserButton();
      //   Crud.createTable(conn,"Products");
        // Crud.insert_row(conn,"Products","Milk", 3, 10);
        // Crud.delete_row_by_name(conn,"Products", "Milk");
@@ -34,6 +35,7 @@ public class HelloApplication extends Application {
        // Crud.insertRow_Products(conn,1,"Milk", 3, 10);
        // Crud.createTable_ProductDiscount(conn,"Product Discount");
        // Crud.insertRow_ProductDiscount(conn,1,10,"2","6",1);
+        Crud.delete_row_by_name(conn,"Users", "hey");
     }
 
 

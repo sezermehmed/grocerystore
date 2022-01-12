@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,7 +19,8 @@ public class Controller {
     private  TextField email;
     @FXML
     private  TextField password;
-
+    @FXML
+    private ComboBox<String> role;
   /*  public Controller(Label welcomeText, TextField email, TextField password) {
         this.welcomeText = welcomeText;
         this.email = email;
@@ -64,7 +66,7 @@ public class Controller {
     }
     private void start() throws IOException {
         // load the fxml
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("store.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("StoreAdmin.fxml"));
         // create a scene
         Scene scene = new Scene(fxmlLoader.load(), 300, 550);
         // create a stage
