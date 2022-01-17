@@ -7,7 +7,4 @@ public class Test {
     JDBCPostgreSQLConnection db = new JDBCPostgreSQLConnection();
    // Connection conn = db.();
 
-
-
-
 }

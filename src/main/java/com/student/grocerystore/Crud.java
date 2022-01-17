@@ -2,7 +2,9 @@ package com.student.grocerystore;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Crud {
     public static void createTable_Products(Connection conn, String table_name){
@@ -122,7 +124,7 @@ public class Crud {
             System.out.println(e);
         }
     }
-    public static void insertRow_Products(Connection conn,Integer product_id,String product_name,Integer product_quantity, Integer product_price){
+    public static void insertRow_Products(Connection conn,Integer product_id,Integer product_quantity,String product_name, Integer product_price){
         Statement statement;
         try {
             String query=String.format("INSERT INTO public.\"Products\"" + " " +
@@ -135,7 +137,7 @@ public class Crud {
             System.out.println(e);
         }
     }
-    public static void insertRow_ProductDiscount(Connection conn, Integer discount_id, Integer discount_amount, String start_date, String end_date, Integer product_id){
+    public static void insertRow_ProductDiscount(Connection conn, Integer discount_id, Integer discount_amount, String  start_date, String end_date, Integer product_id){
         Statement statement;
         try {
             String query=String.format("INSERT INTO public.\"Product Discount\"" + " " +
@@ -195,10 +197,24 @@ public class Crud {
         }
         return login;
     }
+
+
+
     public void update_name(Connection conn,String table_name, String old_name,String new_name){
         Statement statement;
         try {
             String query=String.format("update %s set name='%s' where name='%s'",table_name,new_name,old_name);
+            statement=conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Data Updated");
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    public static void update_amount(Connection conn,String table_name, String old_amount,String new_amount){
+        Statement statement;
+        try {
+            String query=String.format("update %s set productprice='%s' where productprice='%s'",table_name,new_amount,old_amount);
             statement=conn.createStatement();
             statement.executeUpdate(query);
             System.out.println("Data Updated");
@@ -223,28 +239,37 @@ public class Crud {
             System.out.println(e);
         }
     }
-    public void search_by_id(Connection conn, String table_name,int id){
+    public static ArrayList<Integer> search_by_id(Connection conn, String table_name, int id) throws SQLException {
         Statement statement;
         ResultSet rs=null;
         try {
-            String query=String.format("select * from %s where empid= %s",table_name,id);
+            String query=String.format("select * from %s where productid= %s",table_name,id);
             statement=conn.createStatement();
             rs=statement.executeQuery(query);
             while (rs.next()){
-                System.out.print(rs.getString("empid")+" ");
-                System.out.print(rs.getString("name")+" ");
-                System.out.println(rs.getString("address"));
+                System.out.print(rs.getString("productid")+" ");
+              //  System.out.print(rs.getString("productname")+" ");
+                //System.out.println(rs.getString("productprice"));
 
             }
         }catch (Exception e){
             System.out.println(e);
         }
+        Integer productid;
+        Integer productprice;
+        ArrayList<Integer> productid_list = new ArrayList<Integer>();
+        productid = Integer.valueOf(rs.getString("productid"));
+        productprice = Integer.valueOf(rs.getString("productprice"));
+        productid_list.add(productid);
+        productid_list.add(productprice);
+        return productid_list;
+
     }
 
     public static void delete_row_by_name(Connection conn,String table_name, String name){
         Statement statement;
         try{
-            String query=String.format("delete from %s where name='%s'",table_name,name);
+            String query=String.format("DELETE FROM %s WHERE NAME='%s'",table_name,name);
             statement=conn.createStatement();
             statement.executeUpdate(query);
             System.out.println("Data Deleted");
@@ -252,10 +277,11 @@ public class Crud {
             System.out.println(e);
         }
     }
-    public void delete_row_by_id(Connection conn,String table_name, int id){
+    // delete_row_by_name
+    public static void delete_row_by_id(Connection conn,String table_name, int id){
         Statement statement;
         try{
-            String query=String.format("delete from %s where empid= %s",table_name,id);
+            String query=String.format("DELETE FROM %s WHERE productid=%d",table_name,id);
             statement=conn.createStatement();
             statement.executeUpdate(query);
             System.out.println("Data Deleted");
@@ -263,6 +289,7 @@ public class Crud {
             System.out.println(e);
         }
     }
+
 
     public void delete_table(Connection conn, String table_name){
         Statement statement;

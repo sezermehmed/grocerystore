@@ -31,7 +31,16 @@ public class JDBCPostgreSQLConnection {
 
         return conn;
     }
-
+    // close connection to the database
+    public static void close(Connection conn) {
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     /**
      */
     public static void main() {
