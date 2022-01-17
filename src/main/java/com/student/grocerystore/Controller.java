@@ -21,18 +21,11 @@ public class Controller {
     private  TextField password;
     @FXML
     private ComboBox<String> role;
-  /*  public Controller(Label welcomeText, TextField email, TextField password) {
-        this.welcomeText = welcomeText;
-        this.email = email;
-        this.password = password;
-    }*/
-
 
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
         System.out.println("Hello button clicked!");
-
     }
     enum LoginStatus {
         SUCCESS,
@@ -51,13 +44,9 @@ public class Controller {
         if (email.getText().contains(login[0]) && password.getText().contains(login[2])) {
             System.out.println("Login Successful");
             LoginStatus status = LoginStatus.SUCCESS;
-            // exit the fxml
             Stage stage = (Stage) email.getScene().getWindow();
             stage.close();
-
             start();
-
-
         }
         else {
             System.out.println("Login Failed");
@@ -65,17 +54,11 @@ public class Controller {
         }
     }
     private void start() throws IOException {
-        // load the fxml
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("StoreAdmin.fxml"));
-        // create a scene
         Scene scene = new Scene(fxmlLoader.load(), 300, 550);
-        // create a stage
         Stage stage = new Stage();
-        // set the scene
         stage.setScene(scene);
-        // set the stage title
         stage.setTitle("Hello!");
-        // show the stage
         stage.show();
 
     }

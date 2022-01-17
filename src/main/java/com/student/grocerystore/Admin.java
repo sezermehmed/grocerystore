@@ -39,17 +39,11 @@ public class Admin extends Application implements Initializable {
 
     @Override
     public void start(Stage stage) throws IOException{
-        // load the fxml
         FXMLLoader fxmlLoader = new FXMLLoader(Admin.class.getResource("StoreAdmin.fxml"));
-        // create a scene
         Scene scene = new Scene(fxmlLoader.load(), 1050, 550);
-        // create a stage
         Stage stageAdmin = new Stage();
-        // set the scene
         stageAdmin.setScene(scene);
-        // set the stage title
         stageAdmin.setTitle("Hello!");
-        // show the stage
         stageAdmin.show();
 
     }

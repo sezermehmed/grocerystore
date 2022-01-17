@@ -262,11 +262,6 @@ public class Crud {
         productprice = Integer.valueOf(rs.getString("productprice"));
         productid_list.add(productid);
         productid_list.add(productprice);
-       /* try {
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
         return productid_list;
 
     }
